@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.junze.aqiconverter.MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PM 2.5 Concentration to AQI"
+        android:id="@+id/title"
+        />
+    <EditText
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:inputType="number"
+        android:id="@+id/concentration"
+        android:layout_below="@id/title"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="μg/m^3"
+        android:gravity="center"
+        android:id="@+id/hint"
+        android:layout_below="@+id/title"
+        android:layout_toRightOf="@+id/concentration"
+        android:layout_toEndOf="@+id/concentration"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/aqi"
+        android:text=""
+        android:textSize="18sp"
+        android:textColor="@color/textColor"
+        android:layout_below="@+id/concentration"
+        android:gravity="center"
+        android:layout_alignLeft="@+id/concentration"
+        android:layout_alignStart="@+id/concentration"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/indicator"
+        android:layout_below="@id/aqi"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:id="@+id/button_convert"
+        android:text="convert"
+        android:layout_alignParentRight="true"
+        android:layout_toRightOf="@id/hint"
+        android:visibility="gone"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:id="@+id/split"
+        android:background="@android:color/black"
+        android:layout_below="@id/indicator"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="AQI to PM 2.5 concentration"
+        android:id="@+id/title2"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/split"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/title2"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:inputType="number"
+            android:id="@+id/et_aqi"
+            android:hint="AQI = "
+            android:layout_weight="1"
+            />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:id="@+id/tv_aqi"
+            android:textSize="18sp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text=""/>
+    </LinearLayout>
+
+</RelativeLayout>
